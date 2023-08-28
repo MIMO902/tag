@@ -9,11 +9,12 @@ import cookieParser from "cookie-parser";
 
 // Import routes
 import indexRouter from "./routes/index.rout.js";
-
+import productrouter from "./routes/product_rout.js";
 
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 
 const app = express();
 
@@ -31,7 +32,7 @@ app.use(session({ secret: "any secret" }));
 
 //ROUTES
 app.use("/", indexRouter);
-
+app.use("/product", productrouter);
 
 // Error Handling handles error in code
 app.use(function (err, req, res, next) {

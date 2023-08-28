@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<%- include("../partials/localization") %>
   <%- include("../partials/header") %>
 <body>
   <div class="hero">
@@ -24,8 +25,8 @@
   </div>
   <div class="galeri">
     <div class='img' style="background-image: url('/img/heli.png')">
-      <a href="/products"><div class="content">
-        <h1>clark</h1>
+      <a href="/product/products"><div class="content">
+        <h1>ForkLifts</h1>
         <p>this section is for selling clarks</p>
       </div>   
     </a> 
@@ -38,6 +39,7 @@
      </a>
     </div>
   </div>
+  <%- include("../partials/contactus") %>
 </body>
     <%- include("../partials/footer") %>
 </html>

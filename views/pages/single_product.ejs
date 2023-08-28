@@ -1,13 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title><%= product.name %></title>
+  <link rel="stylesheet" href="/CSS/single_product_style.css">
 </head>
+<%- include("../partials/localization") %>
 <%- include("../partials/header") %>
-<body>
-  
-</body>
-<%- include("../partials/footer") %>
+  <body class="page-product_detail layout-default" style="font-size: 12px;">
+    <div class="clearfix"></div>
+    <!-- Content -->
+    <div id="layout-content">
+      <link href="https://www.helichina.net/combine/c80494516471245d0e06764ac2418469-1650608915" rel="stylesheet">
+      <script type="text/javascript"
+        src="https://www.helichina.net/combine/ca1e1da0524f11251ed4d2888bbd1a7e-1610956927"></script>
+      <section class="channel_content pro_detail">
+
+        <div class="pro_detail02">
+          <div class="tab_c_box">
+            <div class="pd_section pd_section01" id="pd_section01">
+              <div class="wrap">
+                <div class="intro">
+                  <div class="t">The steering oil tube and wire harness are arranged independently</div>
+                </div>
+                <div class="content">
+                  <div class="owl-carousel owl-loaded owl-drag">
+
+                    <div class="owl-stage-outer">
+                      <div class="owl-stage"
+                        style="transform: translate3d(-1260px, 0px, 0px); transition: all 0s ease 0s; width: 3150px;">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="owl-item cloned"
+                          style="width: 620px; margin-right: 10px;">
+                          <div class="item">
+                            <div class="rect-75">
+                              <img
+                                src="/img/<%= product.productimage %>"
+                                alt="" class="_full">
+                            </div>
+                          </div>
+                        </div>
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="owl-item cloned"
+                          style="width: 620px; margin-right: 10px;">
+                          <div class="item">
+                            <div class="rect-75">
+                              <img
+                                src="https://www.helichina.net/storage/app/uploads/public/600/4fa/2fd/thumb_931_800_0_0_0_auto.png"
+                                alt="" class="_full">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item active" style="width: 620px; margin-right: 10px;">
+                          <div class="item">
+                            <div class="rect-75">
+                              <img
+                                src="https://www.helichina.net/storage/app/uploads/public/600/4fa/2fd/thumb_931_800_0_0_0_auto.png"
+                                alt="" class="_full">
+                            </div>
+                          </div>
+                        </div>
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="owl-item cloned"
+                          style="width: 620px; margin-right: 10px;">
+                          <div class="item">
+                            <div class="rect-75">
+                              <img
+                                src="https://www.helichina.net/storage/app/uploads/public/600/4fa/2fd/thumb_931_800_0_0_0_auto.png"
+                                alt="" class="_full">
+                            </div>
+                          </div>
+                        </div>
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="owl-item cloned"
+                          style="width: 620px; margin-right: 10px;">
+                          <div class="item">
+                            <div class="rect-75">
+                              <img
+                                src="https://www.helichina.net/storage/app/uploads/public/600/4fa/2fd/thumb_931_800_0_0_0_auto.png"
+                                alt="" class="_full">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i
+                          class="iconfont"></i></button><button type="button" role="presentation" class="owl-next"><i
+                          class="iconfont"></i></button></div>
+                    <div class="owl-dots disabled"><button xmlns="http://www.w3.org/1999/xhtml" role="button"
+                        class="owl-dot active"><span></span></button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pd_section pd_section02" id="pd_section02">
+              <div class="wrap">
+                <div class="intro">
+                  <h1 class="mimo"><%= product.name %></h1>
+                  <div class="t">Product Feature</div>
+                </div>
+                <div class="content">
+                  <div class="row">
+                    <div class="span-6 smidd-12 smal-12" style="font-size: 15px;"><%= product.features %>
+                    </div>
+                    <div class="span-6 smidd-12 smal-hide">
+                      <img src="/img/<%= product.featureimage %>" class="fr-fic fr-dii">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pd_section pd_section03" id="pd_section03">
+              <div class="wrap">
+                <div class="intro">
+                  <div class="t">The main parameter</div>
+                </div>
+                <div class="content">
+                  <div class="txt">
+                    <!-- 编辑框 -->
+                    <div class="table-responsive datalist">
+                      <div class="table-responsive">
+
+                        <img src="/img/<%= product.prameter %>" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+  <%- include("../partials/footer") %>
+
 </html>

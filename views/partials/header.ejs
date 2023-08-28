@@ -1,36 +1,104 @@
 <head>
   <link rel="stylesheet" href="/CSS/header_style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <header>
-  <div class="header-container">
-<div class="navbar">
-  <div class="logo"><a href="/"><img src="/img/logo.png" alt="logo"></a></div>
-  <ul class="links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">about</a></li>
-    <li><a href="/products">products</a></li>
-  </ul>
-  <div class="toggle_btn">
-    <i class="fa-solid fa-bars"></i>
+  <div class="header">
+    <div class="contact-info">
+      <a href="tel:+123-456-7890" class="contact-link">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="contact-details">
+          <span>+123-456-7890</span>
+          <span>Call Us</span>
+        </div>
+      </a>
+      <a href="mailto:info@example.com" class="contact-link">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-details">
+          <span>info@example.com</span>
+          <span>Email Us</span>
+        </div>
+      </a>
+    </div>
+    <div class="language-dropdown">
+      Language
+      <div class="language-options">
+        <a href="/makeen" class="language-option">English</a>
+        <a href="/makear" class="language-option">العربيه</a>
+      </div>
+    </div>
   </div>
-</div>
-<div class="dropdown_menu">
-  <li><a href="/">Home</a></li>
-    <li><a href="/about">about</a></li>
-    <li><a href="/products">products</a></li>
-</div>
-</div>
+  <div class="header-container">
+    <div class="navbar">
+      <div class="logo"><a href="/"><img src="/img/logo.png" alt="logo"></a></div>
+      <ul class="links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">about</a></li>
+        <li>
+          <div class="protype">
+            <a href="/product/products">products</a>
+            <div class="product-options">
+              <a href="/product/electric" class="product-option">Electric forklift</a>
+              <a href="/product/ic" class="product-option">IC forklift</a>
+              <a href="/product/warhouse" class="product-option">Warehouse Equipment</a>
+              <a href="/product/heavy" class="product-option">Heavy forklift</a>
+              <a href="/product/tractor" class="product-option">Tractors</a>
+              <a href="/product/wheel" class="product-option">Wheel loader</a>
+              <a href="/product/special" class="product-option">Special Equipment</a>
+              <a href="/product/other" class="product-option">Other parts</a>
+              <a href="/product/attach" class="product-option">Attachments</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="search-container">
+        <form action="/product/search" method="get">
+        <input type="text" name="searchtext" id="searchtext" placeholder="Search..." required>
+        <button type="submit">
+          <i class="fas fa-search search-icon"></i>
+        </button>
+      </form>
+      </div>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">about</a></li>
+      <li><div class="protype">
+        <a href="/product/products">products</a>
+        <div class="product-options">
+          <a href="/product/electric" class="product-option">Electric forklift</a>
+          <a href="/product/ic" class="product-option">IC forklift</a>
+          <a href="/product/warhouse" class="product-option">Warehouse Equipment</a>
+          <a href="/product/heavy" class="product-option">Heavy forklift</a>
+          <a href="/product/tractor" class="product-option">Tractors</a>
+          <a href="/product/wheel" class="product-option">Wheel loader</a>
+          <a href="/product/special" class="product-option">Special Equipment</a>
+          <a href="/product/other" class="product-option">Other parts</a>
+          <a href="/product/attach" class="product-option">Attachments</a>
+        </div>
+      </div></li>
+    </div>
+  </div>
 </header>
 <script>
-  const togglebtn=document.querySelector('.toggle_btn')
-  const togglebtnicon=document.querySelector('.toggle_btn i')
-  const drop=document.querySelector('.dropdown_menu')
-  togglebtn.onclick=function(){
+  const togglebtn = document.querySelector('.toggle_btn')
+  const togglebtnicon = document.querySelector('.toggle_btn i')
+  const drop = document.querySelector('.dropdown_menu')
+  togglebtn.onclick = function () {
     drop.classList.toggle('open')
-    const isopen=drop.classList.contains('open')
-    togglebtnicon.classList=isopen
-     ?'fa-solid fa-xmark'
-     :'fa-solid fa-bars'
+    const isopen = drop.classList.contains('open')
+    togglebtnicon.classList = isopen
+      ? 'fa-solid fa-xmark'
+      : 'fa-solid fa-bars'
   }
 </script>

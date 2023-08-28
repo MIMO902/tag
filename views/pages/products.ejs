@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/CSS/products_style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/CSS/pagination.css">
   <title>Products</title>
 </head>
+<%- include("../partials/localization") %>
 <%- include("../partials/header") %>
 
   <body>
@@ -16,27 +18,94 @@
         <p class="text-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat rem accusamus iure
           consectetur necessitatibus? Impedit suscipit magnam praesentium unde animi natus libero. Ea, sapiente ducimus?
         </p>
-        <div class="product-items">
-          <a href="/singleprodct">
-          <div class="product">
-            <div class="product-content">
-              <div class="product-img">
-                <img src="/img/product1.png" alt="product">
-              </div>
-              <!-- <div class="product-btn">
-                <button type="button" class="view-item">View more</button>
-              </div> -->
-            </div>
-            <div class="product-info">
-              <div class="product-info-top">
-                <h2 class="md-title">G series 1-1.8T</h2>
-                <p class="details">This new series forklift trucks that made with the latest technical design provide you excellent operating performance. HELI forklift</p>
-              </div>
-            </div>
+        <% var start=currentValue * 8 %>
+          <div class="product-items">
+            <% if (products.length> 0) { %>
+              <% for (var i=start; i < products.length; i++) { %>
+                <a href="/product/singleprodct/<%=products[i].id%>">
+                  <div class="product">
+                    <div class="product-content">
+                      <div class="product-img">
+                        <img src="/img/<%=products[i].productimage%>" alt="product">
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <div class="product-info-top">
+                        <h2 class="md-title"><%=products[i].name%></h2>
+                        <p class="details"><%=products[i].details%></p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <% } %>
+                  <% } else { %>
+                    <p>There are no properties to display...</p>
+                    <% } %>
           </div>
-        </a>
-        </div>
+          <!-- Pagination -->
+          <% if (products.length> 0) { %>
+            <div class="pagination">
+              <button class="btn1" onclick="backBtn()"> <img src="/img/arrowofpagination.png"> prev</button>
+              <ul>
+                <% for (var i=0; i < count; i++) { %>
+                  <li class="link <%= i === currentValue ? 'active' : '' %>" value="<%= i %>"
+                    onclick="activeLink(event)">
+                    <%= i + 1 %>
+                  </li>
+                  <% } %>
+              </ul>
+              <button class="btn2" onclick="nextBtn()"> <img src="/img/arrowofpagination.png">next</button>
+            </div>
+            <% }; %>
       </div>
+
+      <script>
+        let currentValue = 0;
+        let link = document.getElementsByClassName("link");
+
+        function activeLink(event) {
+          for (l of link) {
+            l.classList.remove("active");
+          }
+          event.target.classList.add("active");
+          currentValue = parseInt(event.target.value);
+          showProducts();
+        }
+
+        function backBtn() {
+          if (currentValue > 0) {
+            currentValue--;
+            for (l of link) {
+              l.classList.remove("active");
+            }
+            link[currentValue].classList.add("active");
+            showProducts();
+          }
+        }
+
+        function nextBtn() {
+          if (currentValue < link.length - 1) {
+            currentValue++;
+            for (l of link) {
+              l.classList.remove("active");
+            }
+            link[currentValue].classList.add("active");
+            showProducts();
+          }
+        }
+        function showProducts() {
+          let products = document.getElementsByClassName("product");
+          for (let i = 0; i < properties.length; i++) {
+            if (i >= currentValue * 6 && i < (currentValue + 1) * 6) {
+              products[i].style.display = "block";
+            } else {
+              products[i].style.display = "none";
+            }
+          }
+        }
+        showProducts();
+      </script>
+    </div>
     </div>
 
   </body>

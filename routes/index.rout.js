@@ -1,22 +1,29 @@
 import { Router } from 'express';
-
+import la from'../controller/product_controller.js'
 const router = Router();
 router.get('/', function (req, res, next) {
+  console.log(la);
+  if(la==='en'){
+    console.log('the laguage english');
+  }else{
+    console.log('the laguage arabic');
+  }
   console.log('index.js: GET /');
-  res.render('pages/Home',{ user: (req.session.user === undefined ? "" : req.session.user)});
+  res.render('pages/Home',{la: la, user: (req.session.user === undefined ? "" : req.session.user)});
 });
 router.get('/about', function (req, res, next) {
   console.log('index.js: GET /');
-  res.render('pages/about',{ user: (req.session.user === undefined ? "" : req.session.user)});
+  res.render('pages/about',{la: la, user: (req.session.user === undefined ? "" : req.session.user)});
 });
-router.get('/products', function (req, res, next) {
+router.get('/makeen', function (req, res, next) {
   console.log('index.js: GET /');
-  res.render('pages/products',{ user: (req.session.user === undefined ? "" : req.session.user)});
+  la='en'
+  //res;
 });
-router.get('/singleprodct', function (req, res, next) {
+router.get('/makear', function (req, res, next) {
   console.log('index.js: GET /');
-  res.render('pages/single_product',{ user: (req.session.user === undefined ? "" : req.session.user)});
+  la='ar'
+  //res;
 });
-
 
 export default router;

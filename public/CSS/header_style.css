@@ -50,21 +50,28 @@ header{
   display: none;
 }
 .dropdown_menu.open{
-  height: 240px;
+  height: 540px;
 }
 .dropdown_menu{
   display: none;
   position: absolute;
   right: 2rem;
-  top: 60px;
+  top: 140px;
   height: 0;
   width: 300px;
-  background: rgba(255,255,255,0.1);
+  background:#444;
   backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
   transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 3 ;
+}
+.dropdown_menu .product-options .product-option{
+    width: 200px;
+    margin-left: -20px;
+}
+.dropdown_menu .product-options{
+  background: #444;
 }
 .dropdown_menu li{
   padding: 0.7rem;
@@ -80,24 +87,7 @@ header{
 .dropdown_menu a:hover{
   color: teal;
 }
-@media (max-width: 992px) {
-  .navbar .links{
-    display: none;
-  }
-  .navbar .toggle_btn{
-    display: block;
-  }
-  .dropdown_menu{
-    display: block;
-  }
-}
 
-@media (max-width: 576px) {
-.dropdown_menu{
-  left: 2rem;
-  width: unset;
-}
-}
 .header-container{
   width: 100%;
   height: 100px;
@@ -111,4 +101,203 @@ header{
 .logo img{
   width: 35%;
   height: 80%;
+}
+.header {
+  background-color: #24262b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-icon {
+  font-size: 24px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  margin: 5px;
+  margin-left: 10px;
+}
+
+.contact-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: teal; /* Change color on hover */
+}
+
+.language-dropdown {
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  position: relative; /* Added to handle dropdown positioning */
+}
+
+.language-dropdown:hover {
+  background-color: #444; /* Change background color on hover */
+}
+
+.language-options {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 100px;
+  z-index: 1;
+}
+.protype{
+  cursor: pointer;
+  position: relative; /* Added to handle dropdown positioning */
+}
+.protype:hover .product-options {
+  display: block;
+}
+.language-dropdown:hover .language-options {
+  display: block;
+}
+.language-option {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+.product-option{
+  padding: 10px;
+  text-align: center;
+  color: white;
+  width: 150px;
+  text-decoration: none;
+  display: block;
+}
+.product-options {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 100px;
+  margin-left: -45px;
+  z-index: 1;
+}
+.language-option:hover {
+  background-color: #444;
+}
+
+.language-select {
+  display: none;
+}
+
+.language-select:focus {
+  outline: none;
+}
+
+/* Custom style for the contact details */
+.contact-details span {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 3px; /* Added margin */
+}
+
+
+.search-container input[type="text"] {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  font-size: 16px;
+  width: 200px;
+  transition: width 0.3s;
+}
+
+.search-container input[type="text"]:focus {
+  width: 250px;
+}
+
+.search-container button {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+  background-color: rgb(1, 100, 100);
+}
+@media (max-width: 992px) {
+  .navbar .links{
+    display: none;
+  }
+  .navbar .toggle_btn{
+    display: block;
+  }
+  .dropdown_menu{
+    display: block;
+  }
+  .search-container {
+    margin-left: -90px;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px 0 0 20px; /* Rounded corners on the left */
+    background-color: #f4f4f4;
+    font-size: 16px;
+    width: 180px;
+    height: 37px;
+    transition: width 0.3s;
+  }
+  
+  .search-container input[type="text"]:focus {
+    width: 220px;
+  }
+  
+  .search-container button {
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0; /* Rounded corners on the right */
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: -3px;
+    transition: background-color 0.3s;
+  }
+  
+  .search-container button:hover {
+    background-color:rgb(1, 97, 97);
+  }
+  
+  .search-icon {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+.dropdown_menu{
+  left: 2rem;
+  width: unset;
+}
+
 }
